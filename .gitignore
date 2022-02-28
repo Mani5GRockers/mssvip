@@ -1,4 +1,4 @@
-config.en
+config.env
 *auth_token.txt
 *.pyc
 data*
