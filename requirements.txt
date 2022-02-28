@@ -1,6 +1,5 @@
 anytree
 appdirs
-aria2p
 attrdict
 beautifulsoup4
 bencoding
@@ -23,10 +22,8 @@ python-magic
 python-telegram-bot
 qbittorrent-api
 requests
-speedtest-cli
 six
 telegraph
 tenacity
 tgCrypto
 urllib3
-yt-dlp
