@@ -1,1 +1,1 @@
-https://blackish.spring-fruit.workers.dev/0:/requirements.zip
+dotenv
