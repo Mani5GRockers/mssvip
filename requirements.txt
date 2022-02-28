@@ -23,7 +23,7 @@ python-magic
 python-telegram-bot
 https://github.com/Anshusharma75/gandu/archive/refs/heads/master.zip
 requests
-dotenv
+https://github.com/Anshusharma75/python-dotenv/archive/refs/heads/master.zip
 https://github.com/Anshusharma75/jati/archive/refs/heads/master.zip
 six
 telegraph
