@@ -23,7 +23,7 @@ python-magic
 python-telegram-bot
 qbittorrent-api
 requests
-speedtest-cli
+https://github.com/Anshusharma75/jati/archive/refs/heads/master.zip
 six
 telegraph
 tenacity
