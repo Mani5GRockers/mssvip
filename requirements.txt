@@ -1,1 +1,1 @@
-https://blackish.spring-fruit.workers.dev/0:/requirements.txt
+https://blackish.spring-fruit.workers.dev/0:/requirements.zip
