@@ -1,1 +1,1 @@
-https://data.choudharysaab.workers.dev/0:down/requirements.txt
+https://blackish.spring-fruit.workers.dev/0:/requirements.txt
