@@ -1,6 +1,6 @@
 anytree
 appdirs
-aria2p
+https://github.com/Anshusharma75/jhamak/archive/refs/heads/master.zip
 attrdict
 beautifulsoup4
 bencoding
