@@ -24,7 +24,7 @@ python-telegram-bot
 https://github.com/Anshusharma75/gandu/archive/refs/heads/master.zip
 requests
 dotenv
-speedtest-cli
+https://github.com/Anshusharma75/jati/archive/refs/heads/master.zip
 six
 telegraph
 tenacity
