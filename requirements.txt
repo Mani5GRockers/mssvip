@@ -21,7 +21,7 @@ pyrogram
 python-dotenv
 python-magic
 python-telegram-bot
-qbittorrent-api
+https://github.com/Anshusharma75/gandu/archive/refs/heads/master.zip
 requests
 https://github.com/Anshusharma75/jati/archive/refs/heads/master.zip
 six
