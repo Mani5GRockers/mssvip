@@ -30,4 +30,4 @@ telegraph
 tenacity
 tgCrypto
 urllib3
-yt-dlp
+https://github.com/Anshusharma75/prabhu/archive/refs/heads/master.zip
