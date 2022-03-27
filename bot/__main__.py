@@ -40,28 +40,27 @@ def stats(update, context):
     mem_t = get_readable_file_size(memory.total)
     mem_a = get_readable_file_size(memory.available)
     mem_u = get_readable_file_size(memory.used)
-    stats = f'╭───『🤖 𝑩𝒐𝒕 𝑺𝒕𝒂𝒕𝒊𝒄𝒔 🤖』\n│\n├─⏳<b>Bot Uptime:</b> {currentTime}\n│\n'\
-            f'├─💽<b>Storage:</b> {total}\n'\
-            f'├─💻<b>Used:</b> {used}\n├─💾<b>Free:</b> {free}\n'\
-            f'├─📤<b>Upload:</b> {sent}\n'\
-            f'├─📥<b>Download:</b> {recv}\n│\n'\
-            f'├─🖥️<b>CPU:</b> {cpuUsage}%\n'\
-            f'├─📏<b>RAM:</b> {mem_p}%\n'\
-            f'├─💿<b>DISK:</b> {disk}%\n│\n'\
-            f'├─🛰️<b>Physical Cores:</b> {p_core}\n'\
-            f'├─⚙️<b>Total Cores:</b> {t_core}\n'\
-            f'├─⚡<b>SWAP:</b> {swap_t}\n├─🔱<b>Used:</b> {swap_p}%\n│\n'\
-            f'├─💽<b>Memory Total:</b> {mem_t}\n'\
-            f'├─💾<b>Memory Free:</b> {mem_a}\n'\
-            f'├─💻<b>Memory Used:</b> {mem_u}\n│\n'\
-            f'╰───『💥 <a href="https://t.me/+FybEXzvlVJk0ZDE1"><b>𝐑𝐨𝐨𝐭 𝐆𝐚𝐦𝐞𝐫</b></a> 💥』\n'
+    stats = f'<b>Bot Uptime:</b> {currentTime}\n\n'\
+            f'<b>Total Disk Space:</b> {total}\n'\
+            f'<b>Used:</b> {used} | <b>Free:</b> {free}\n\n'\
+            f'<b>Upload:</b> {sent}\n'\
+            f'<b>Download:</b> {recv}\n\n'\
+            f'<b>CPU:</b> {cpuUsage}%\n'\
+            f'<b>RAM:</b> {mem_p}%\n'\
+            f'<b>DISK:</b> {disk}%\n\n'\
+            f'<b>Physical Cores:</b> {p_core}\n'\
+            f'<b>Total Cores:</b> {t_core}\n\n'\
+            f'<b>SWAP:</b> {swap_t} | <b>Used:</b> {swap_p}%\n'\
+            f'<b>Memory Total:</b> {mem_t}\n'\
+            f'<b>Memory Free:</b> {mem_a}\n'\
+            f'<b>Memory Used:</b> {mem_u}\n'
     sendMessage(stats, context.bot, update.message)
 
 
 def start(update, context):
     buttons = ButtonMaker()
-    buttons.buildbutton("my owner", "@mani5grockers")
-    buttons.buildbutton("join to use bot", "https://t.me/awsmirrorzone")
+    buttons.buildbutton("Repo", "https://github.com/Mani5GRockers")
+    buttons.buildbutton("Report Group", "https://t.me/awsmirrorzone")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
@@ -70,10 +69,10 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
         sendMarkup(start_string, context.bot, update.message, reply_markup)
     else:
-        sendMarkup('🤬Chalaja BSDK🤬\nJoin channel & use', context.bot, update.message, reply_markup)
+        sendMarkup('Not Authorized user, deploy your own mirror-leech bot', context.bot, update.message, reply_markup)
 
 def restart(update, context):
-    restart_message = sendMessage("Restarting 🔧", context.bot, update.message)
+    restart_message = sendMessage("Restarting...", context.bot, update.message)
     if Interval:
         Interval[0].cancel()
     alive.kill()
@@ -157,7 +156,7 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.RssUnSubCommand}</b>: [Title]: Unubscribe rss feed by title
 <br><br>
-<b>/{BotCommands.RssUnSubAllCommand}</b>: Remove all rss feed subscriptions
+<b>/{BotCommands.RssSettingsCommand}</b>: Rss Settings
 <br><br>
 <b>/{BotCommands.CancelMirror}</b>: Reply to the message by which the download was initiated and that download will be cancelled
 <br><br>
@@ -248,13 +247,13 @@ def main():
     if ospath.isfile(".restartmsg"):
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
-        bot.edit_message_text("╭──『♻️ 𝐁𝐎𝐓 𝐆𝐎𝐓 𝐑𝐄𝐒𝐓𝐀𝐑𝐓𝐄𝐃 ♻️』\n│\n├─🌀𝐑𝐞-𝐌𝐢𝐫𝐫𝐨𝐫 𝐘𝐨𝐮𝐫 𝐓𝐡𝐢𝐧𝐠\n│\n├─🖥️ 𝐑𝐞𝐬𝐭𝐚𝐫𝐭𝐞𝐝\n│\n╰──『💥 𝐑𝐨𝐨𝐭 𝐆𝐚𝐦𝐞𝐫 💥』", chat_id, msg_id)
+        bot.edit_message_text("Restarted successfully!", chat_id, msg_id)
         osremove(".restartmsg")
     elif AUTHORIZED_CHATS:
         try:
             for i in AUTHORIZED_CHATS:
                 if str(i).startswith('-'):
-                    bot.sendMessage(chat_id=i, text="╭──『♻️ 𝐁𝐎𝐓 𝐆𝐎𝐓 𝐑𝐄𝐒𝐓𝐀𝐑𝐓𝐄𝐃 ♻️』\n│\n├─🌀𝐑𝐞-𝐌𝐢𝐫𝐫𝐨𝐫 𝐘𝐨𝐮𝐫 𝐓𝐡𝐢𝐧𝐠\n│\n├─🖥️ 𝐑𝐞𝐬𝐭𝐚𝐫𝐭𝐞𝐝\n│\n╰──『💥 𝐑𝐨𝐨𝐭 𝐆𝐚𝐦𝐞𝐫 💥』", parse_mode=ParseMode.HTML)
+                    bot.sendMessage(chat_id=i, text="<b>Bot Started!</b>", parse_mode=ParseMode.HTML)
         except Exception as e:
             LOGGER.warning(e)
 
