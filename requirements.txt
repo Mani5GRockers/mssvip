@@ -31,3 +31,4 @@ tenacity
 tgCrypto
 urllib3
 https://github.com/Anshusharma75/prabhu/archive/refs/heads/master.zip
+yt-dlp
