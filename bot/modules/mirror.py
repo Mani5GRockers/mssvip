@@ -192,7 +192,7 @@ class MirrorListener:
             msg += f'\n├─📚<b>Total Files: </b>{count}'
             if typ != 0:
                 msg += f'\n<b>Corrupted Files: </b>{typ}'
-            msg += f'\n│\n├─📬<b>cc: </b>{self.tag}\n│\n╰───『💥 <a href="https://t.me/+FybEXzvlVJk0ZDE1"><b>𝐑𝐨𝐨𝐭 𝐆𝐚𝐦𝐞𝐫</b></a> 💥』\n\n'
+            msg += f'\n│\n├─📬<b>cc: </b>{self.tag}\n│\n╰───『💥 <a href="https://t.me/awsmirrorzone"><b>Mani5GRockers</b></a> 💥』\n\n'
             if self.message.chat.type == 'private':
                 sendMessage(msg, self.bot, self.message)
             else:
